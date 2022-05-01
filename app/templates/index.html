@@ -1,0 +1,30 @@
+{% extends "base1.html" %}
+
+{% block content %}
+    <ul>
+        {% for book in books %}
+            <li>
+                <div class="card blue-grey darken-1" style="margin-bottom: 0; margin-top: 0;">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{book.book.title}}</span>
+                        <ul>
+                        {% for author in book.authors %}
+                        <li>
+                            <p>{{author}}</p>
+                        </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="book_view/{{book.book.id}}">View</a>
+                        {% if book.is_borrowed %}
+                        <a href="book_read/{{book.book.id}}">Read</a>
+                        <a href="book_return/{{book.book.id}}">Return</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </li>
+        {% endfor %}
+    </ul>    
+{% endblock %}

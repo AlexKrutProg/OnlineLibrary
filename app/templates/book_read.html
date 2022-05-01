@@ -1,0 +1,11 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+    <div class="card grey lighten-1">
+        <div class="card-content">
+            <div class="center-align"><span class="card-title">{{book.title}}</span></div>
+            <div class="divider"></div>
+            {% include 'Books/' + book.path ignore missing %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base1.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="card blue lighten-2">
+            <div class="card-content">
+                <span class="card-title center-align">{{book.book.title}}</span>
+                <div class="collection">
+                    {% for author in book.authors %}
+                    <a href="#!" class="collection-item blue lighten-1 purple-text text-darken-2">{{author}}</a>
+                    {% endfor %}
+                </div>
+                <div class="card-action center-align">
+                    {% if book.is_borrowed %}
+                    <a class="waves-effect waves-light btn-large" href="{{ url_for('book_read', _book=book.book.id) }}">Read</a>
+                    <a class="waves-effect waves-light btn-large" href="{{ url_for('book_return', _book=book.book.id) }}">Return</a>
+                    {% else %}
+                    <form action="" method="post">
+                        {{ borrow.hidden_tag() }}
+                        <a class="waves-effect waves-light btn">{{ borrow.submit() }}</a>
+                    </form>
+                    {% endif %}
+                  </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
