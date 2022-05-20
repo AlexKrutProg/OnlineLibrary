@@ -20,5 +20,17 @@ OnlineLibrary - онлайн библиотека
 
 Запуск:
 В репозитории лежит виртуальное окружение, база данных с администратором (admin, пароль-12345), набор из нескольких книг.
-1. Запустить виртуальное окружение (source venv/bin/activate)
+1. Запустить виртуальное окружение (source .venv/bin/activate)
 2. Запустить приложение (flask run).
+
+
+Библиотеки для server:
+1. flask-sqlalchemy
+2. flask-migrate
+3. flask-login
+4. flask-admin
+5. flask-wtf
+
+Библиотеки для client:
+1. pywebview
+
